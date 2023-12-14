@@ -104,7 +104,7 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/qzm233/qzm233.github.io.git
-  branch: master
+  repo: git@github.com:qzm233/qzm233.github.io.git
+  branch: hexo
   message: Site updated {{ now('YYYY-MM-DD HH:mm:ss') }}
 
