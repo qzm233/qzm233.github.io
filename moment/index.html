@@ -12,7 +12,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="Training TinyLlama to clinic domain." />
+    <meta name="description" content="The moment" />
     <meta name="hexo-theme-A4" content="v1.8.8" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Zimo.</title>
@@ -274,7 +274,13 @@
             
         
             
-                <li><a href="/moment/">Moment Thought</a></li>
+                <li><i>
+                    
+                        <u>
+                            <a  href="/moment/">Moment Thought</a>
+                        </u>
+                    
+                </i></li>
             
         
     </ul>
@@ -291,42 +297,15 @@
                         <div class="post-main">
 
     
-        <div class="post-main-title">
-            Training TinyLlama to clinic domain.
-        </div>
-      
-    
 
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction-of-LLMs"><span class="post-toc-text">Introduction of LLMs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#The-Importance-of-LLMs-in-Specific-Domains"><span class="post-toc-text">The Importance of LLMs in Specific Domains</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fine-Tuning-LLMs-for-Specific-Domains"><span class="post-toc-text">Fine-Tuning LLMs for Specific Domains</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Potential-Directions-for-Applying-LLMs"><span class="post-toc-text">Potential Directions for Applying LLMs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#My-trail-of-Finetuning-TinyLLaMA-1b-with-clinical-instruction-data-with-QLoRA-method"><span class="post-toc-text">My trail of Finetuning TinyLLaMA-1b with clinical instruction data with QLoRA method.</span></a></li></ol>
-            
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="Introduction-of-LLMs"><a href="#Introduction-of-LLMs" class="headerlink" title="Introduction of LLMs"></a>Introduction of LLMs</h2><p>LLMs, or Large Language Models, are advanced AI systems trained on vast amounts of text data. They leverage deep learning techniques, particularly the Transformer architecture, to learn patterns and structures in language. LLMs are capable of generating coherent text, understanding context, and performing complex language tasks such as translation, summarization, and question-answering.</p>
-<h2 id="The-Importance-of-LLMs-in-Specific-Domains"><a href="#The-Importance-of-LLMs-in-Specific-Domains" class="headerlink" title="The Importance of LLMs in Specific Domains"></a>The Importance of LLMs in Specific Domains</h2><p>In specialized fields like clinical practice, law, and finance, the accuracy and expertise of information are paramount. The application of LLMs can enhance work efficiency and quality in these domains while minimizing human errors. For instance, in clinical settings, LLMs can assist doctors in quickly accessing medical records and literature to aid in diagnosis; in legal practice, they can help lawyers with case research and drafting legal documents; in finance, LLMs can provide market analysis and risk assessments.</p>
-<h2 id="Fine-Tuning-LLMs-for-Specific-Domains"><a href="#Fine-Tuning-LLMs-for-Specific-Domains" class="headerlink" title="Fine-Tuning LLMs for Specific Domains"></a>Fine-Tuning LLMs for Specific Domains</h2><p>To make LLMs more effective in specific domains, they need to be fine-tuned. Fine-tuning involves training the model on a dataset specific to the target domain, adjusting the model’s parameters to adapt to the new context. The fine-tuning process typically includes the following steps:</p>
-<ol>
-<li><strong>Data Collection</strong>: Gather a large corpus of text data relevant to the target domain.</li>
-<li><strong>Data Preprocessing</strong>: Clean and format the data to ensure it’s suitable for model training.</li>
-<li><strong>Fine-Tuning Training</strong>: Train the model on the preprocessed dataset, adjusting parameters to adapt to the new domain.</li>
-<li><strong>Evaluation and Iteration</strong>: Evaluate the model’s performance in the new domain and iterate as necessary for optimization.</li>
-</ol>
-<h2 id="Potential-Directions-for-Applying-LLMs"><a href="#Potential-Directions-for-Applying-LLMs" class="headerlink" title="Potential Directions for Applying LLMs"></a>Potential Directions for Applying LLMs</h2><ol>
-<li><strong>Clinical Diagnostic Assistance</strong>: LLMs can analyze medical records to help doctors identify disease patterns and provide diagnostic suggestions.</li>
-<li><strong>Legal Document Automation</strong>: Automatically generate contracts, legal documents, and legal opinions to reduce the workload of lawyers.</li>
-<li><strong>Financial Risk Assessment</strong>: Analyze financial data to predict market trends and support investment decisions.</li>
-<li><strong>Automated Customer Service</strong>: Provide natural language processing capabilities in customer service to improve response times and customer satisfaction.</li>
-<li><strong>Regulatory Compliance</strong>: Assist in ensuring that businesses comply with regulatory requirements by analyzing and flagging potential non-compliance issues.</li>
-<li><strong>Research and Development</strong>: In scientific research, LLMs can help identify relevant literature, summarize findings, and even suggest new research directions based on existing knowledge.</li>
-<li><strong>Personalized Recommendations</strong>: In various industries, LLMs can tailor recommendations to individual needs, preferences, or circumstances, enhancing user experiences.</li>
-</ol>
-<h2 id="My-trail-of-Finetuning-TinyLLaMA-1b-with-clinical-instruction-data-with-QLoRA-method"><a href="#My-trail-of-Finetuning-TinyLLaMA-1b-with-clinical-instruction-data-with-QLoRA-method" class="headerlink" title="My trail of Finetuning TinyLLaMA-1b with clinical instruction data with QLoRA method."></a>My trail of Finetuning TinyLLaMA-1b with clinical instruction data with QLoRA method.</h2><ol>
-<li><strong>Model</strong> <a target="_blank" rel="noopener" href="https://modelscope.cn/models/chaoscodes/TinyLlama-1.1B-Chat-v0.1">TinyLLaMA-1b</a></li>
-<li><strong>Data</strong> <a target="_blank" rel="noopener" href="https://github.com/Kent0n-Li/ChatDoctor">clinical instruction data</a></li>
-<li><strong>QLoRa Finetuning</strong> One can check the github code to find the method of fine-tuning with <a target="_blank" rel="noopener" href="https://github.com/artidoro/qlora">QLoRa</a>. Due to some constrains, only one epoch is conducted. QLoRa truely promote the training speed. There are some blogs that one can refer to.<a target="_blank" rel="noopener" href="https://blog.ovhcloud.com/fine-tuning-llama-2-models-using-a-single-gpu-qlora-and-ai-notebooks/">Blog by Mathieu Busquet</a> and [blog by ]</li>
-<li><strong>Validation on MedMCQA dataset</strong> <a target="_blank" rel="noopener" href="https://github.com/medmcqa/medmcqa">MedMCQA</a> is designed to address realworld medical entrance exam questions. After one epoch finetuning, LLM always talks foolishly. Because of finetuning dataset, the model is always act like a Robot but not an Examnee. One should add the proper prompt to get an answer of option and the accuracy is about 20%. One can refer to the <a target="_blank" rel="noopener" href="https://saankhya.medium.com/mistral-instruct-7b-finetuning-on-medmcqa-dataset-6ec2532b1ff1">blog by Saankhya Mondal</a>.</li>
-</ol>
+        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>2024-3-4 </p>
+<div style="background-color: #ffffff; padding: 10px;">
+    <center>我思故我在</center>
+</div>
 </div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
@@ -337,26 +316,6 @@
 
     <div class="post-meta">
         <i>
-        
-            <span>2023-12-25</span>
-            
-                <span>该篇文章被 Zimo</span>
-            
-            
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/LLM/'>
-                            LLM
-                        </a>
-                    
-                        <a href='/tags/clinic/'>
-                            clinic
-                        </a>
-                    
-                </span>
-             
-             
         
         </i>
     </div>

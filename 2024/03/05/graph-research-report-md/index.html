@@ -12,7 +12,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="Training TinyLlama to clinic domain." />
+    <meta name="description" content="graph_research_report.md" />
     <meta name="hexo-theme-A4" content="v1.8.8" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Zimo.</title>
@@ -292,7 +292,7 @@
 
     
         <div class="post-main-title">
-            Training TinyLlama to clinic domain.
+            graph_research_report.md
         </div>
       
     
@@ -300,33 +300,87 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction-of-LLMs"><span class="post-toc-text">Introduction of LLMs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#The-Importance-of-LLMs-in-Specific-Domains"><span class="post-toc-text">The Importance of LLMs in Specific Domains</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fine-Tuning-LLMs-for-Specific-Domains"><span class="post-toc-text">Fine-Tuning LLMs for Specific Domains</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Potential-Directions-for-Applying-LLMs"><span class="post-toc-text">Potential Directions for Applying LLMs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#My-trail-of-Finetuning-TinyLLaMA-1b-with-clinical-instruction-data-with-QLoRA-method"><span class="post-toc-text">My trail of Finetuning TinyLLaMA-1b with clinical instruction data with QLoRA method.</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GNN-Research-Report"><span class="post-toc-text">GNN Research Report</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Update-log"><span class="post-toc-text">Update log</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Establishment"><span class="post-toc-text">Establishment</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GNN-in-traffic"><span class="post-toc-text">GNN in traffic</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TraffNet-Learning-Causality-of-Traffic-Generation-for-What-if-Prediction"><span class="post-toc-text">TraffNet: Learning Causality of Traffic Generation for What-if Prediction</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Database-and-software"><span class="post-toc-text">Database and software</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#neo4j"><span class="post-toc-text">neo4j</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Graph-Anomaly-Detection"><span class="post-toc-text">Graph Anomaly Detection</span></a></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="Introduction-of-LLMs"><a href="#Introduction-of-LLMs" class="headerlink" title="Introduction of LLMs"></a>Introduction of LLMs</h2><p>LLMs, or Large Language Models, are advanced AI systems trained on vast amounts of text data. They leverage deep learning techniques, particularly the Transformer architecture, to learn patterns and structures in language. LLMs are capable of generating coherent text, understanding context, and performing complex language tasks such as translation, summarization, and question-answering.</p>
-<h2 id="The-Importance-of-LLMs-in-Specific-Domains"><a href="#The-Importance-of-LLMs-in-Specific-Domains" class="headerlink" title="The Importance of LLMs in Specific Domains"></a>The Importance of LLMs in Specific Domains</h2><p>In specialized fields like clinical practice, law, and finance, the accuracy and expertise of information are paramount. The application of LLMs can enhance work efficiency and quality in these domains while minimizing human errors. For instance, in clinical settings, LLMs can assist doctors in quickly accessing medical records and literature to aid in diagnosis; in legal practice, they can help lawyers with case research and drafting legal documents; in finance, LLMs can provide market analysis and risk assessments.</p>
-<h2 id="Fine-Tuning-LLMs-for-Specific-Domains"><a href="#Fine-Tuning-LLMs-for-Specific-Domains" class="headerlink" title="Fine-Tuning LLMs for Specific Domains"></a>Fine-Tuning LLMs for Specific Domains</h2><p>To make LLMs more effective in specific domains, they need to be fine-tuned. Fine-tuning involves training the model on a dataset specific to the target domain, adjusting the model’s parameters to adapt to the new context. The fine-tuning process typically includes the following steps:</p>
-<ol>
-<li><strong>Data Collection</strong>: Gather a large corpus of text data relevant to the target domain.</li>
-<li><strong>Data Preprocessing</strong>: Clean and format the data to ensure it’s suitable for model training.</li>
-<li><strong>Fine-Tuning Training</strong>: Train the model on the preprocessed dataset, adjusting parameters to adapt to the new domain.</li>
-<li><strong>Evaluation and Iteration</strong>: Evaluate the model’s performance in the new domain and iterate as necessary for optimization.</li>
-</ol>
-<h2 id="Potential-Directions-for-Applying-LLMs"><a href="#Potential-Directions-for-Applying-LLMs" class="headerlink" title="Potential Directions for Applying LLMs"></a>Potential Directions for Applying LLMs</h2><ol>
-<li><strong>Clinical Diagnostic Assistance</strong>: LLMs can analyze medical records to help doctors identify disease patterns and provide diagnostic suggestions.</li>
-<li><strong>Legal Document Automation</strong>: Automatically generate contracts, legal documents, and legal opinions to reduce the workload of lawyers.</li>
-<li><strong>Financial Risk Assessment</strong>: Analyze financial data to predict market trends and support investment decisions.</li>
-<li><strong>Automated Customer Service</strong>: Provide natural language processing capabilities in customer service to improve response times and customer satisfaction.</li>
-<li><strong>Regulatory Compliance</strong>: Assist in ensuring that businesses comply with regulatory requirements by analyzing and flagging potential non-compliance issues.</li>
-<li><strong>Research and Development</strong>: In scientific research, LLMs can help identify relevant literature, summarize findings, and even suggest new research directions based on existing knowledge.</li>
-<li><strong>Personalized Recommendations</strong>: In various industries, LLMs can tailor recommendations to individual needs, preferences, or circumstances, enhancing user experiences.</li>
-</ol>
-<h2 id="My-trail-of-Finetuning-TinyLLaMA-1b-with-clinical-instruction-data-with-QLoRA-method"><a href="#My-trail-of-Finetuning-TinyLLaMA-1b-with-clinical-instruction-data-with-QLoRA-method" class="headerlink" title="My trail of Finetuning TinyLLaMA-1b with clinical instruction data with QLoRA method."></a>My trail of Finetuning TinyLLaMA-1b with clinical instruction data with QLoRA method.</h2><ol>
-<li><strong>Model</strong> <a target="_blank" rel="noopener" href="https://modelscope.cn/models/chaoscodes/TinyLlama-1.1B-Chat-v0.1">TinyLLaMA-1b</a></li>
-<li><strong>Data</strong> <a target="_blank" rel="noopener" href="https://github.com/Kent0n-Li/ChatDoctor">clinical instruction data</a></li>
-<li><strong>QLoRa Finetuning</strong> One can check the github code to find the method of fine-tuning with <a target="_blank" rel="noopener" href="https://github.com/artidoro/qlora">QLoRa</a>. Due to some constrains, only one epoch is conducted. QLoRa truely promote the training speed. There are some blogs that one can refer to.<a target="_blank" rel="noopener" href="https://blog.ovhcloud.com/fine-tuning-llama-2-models-using-a-single-gpu-qlora-and-ai-notebooks/">Blog by Mathieu Busquet</a> and [blog by ]</li>
-<li><strong>Validation on MedMCQA dataset</strong> <a target="_blank" rel="noopener" href="https://github.com/medmcqa/medmcqa">MedMCQA</a> is designed to address realworld medical entrance exam questions. After one epoch finetuning, LLM always talks foolishly. Because of finetuning dataset, the model is always act like a Robot but not an Examnee. One should add the proper prompt to get an answer of option and the accuracy is about 20%. One can refer to the <a target="_blank" rel="noopener" href="https://saankhya.medium.com/mistral-instruct-7b-finetuning-on-medmcqa-dataset-6ec2532b1ff1">blog by Saankhya Mondal</a>.</li>
-</ol>
+        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="GNN-Research-Report"><a href="#GNN-Research-Report" class="headerlink" title="GNN Research Report"></a>GNN Research Report</h1><p>Author: QI Zimo <br>Updating</p>
+<h2 id="Update-log"><a href="#Update-log" class="headerlink" title="Update log"></a>Update log</h2><ul>
+<li><a href="#establishment">2024-2-26</a>: Establish the note</li>
+<li><a href="#gnn-in-traffic">2024-2-27</a>: Explre GNN in traffic prediction domain and catch a paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2303.15954">TraffNet: Learning Causality of Traffic Generation for What-if Prediction</a> </li>
+<li><a href="#neo4j">2024-2-28</a>: <a target="_blank" rel="noopener" href="https://neo4j.com/?utm_source=Google&utm_medium=PaidSearch&utm_campaign=Evergreenutm_content=AMS-Search-SEMBrand-Evergreen-None-SEM-SEM-NonABM&utm_term=neo4j&utm_adgroup=core-brand&gad_source=1&gclid=CjwKCAiArfauBhApEiwAeoB7qBOTq_aRkd6myqch3mCe3yy-2DNRE6GMID4vYfm4CHOGq9wkhBZsnxoCC6EQAvD_BwE">Neo4j database</a></li>
+<li><a href="#graph-anomaly-detection">2024-2-28</a>: <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9556511">Cross-Domain Graph Anomaly Detection</a></li>
+</ul>
+<h2 id="Establishment"><a href="#Establishment" class="headerlink" title="Establishment"></a>Establishment</h2><p>2024-2-26 establish the note to record the research activity of graph neural network</p>
+<h2 id="GNN-in-traffic"><a href="#GNN-in-traffic" class="headerlink" title="GNN in traffic"></a>GNN in traffic</h2><h3 id="TraffNet-Learning-Causality-of-Traffic-Generation-for-What-if-Prediction"><a href="#TraffNet-Learning-Causality-of-Traffic-Generation-for-What-if-Prediction" class="headerlink" title="TraffNet: Learning Causality of Traffic Generation for What-if Prediction"></a><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2303.15954">TraffNet: Learning Causality of Traffic Generation for What-if Prediction</a></h3><p>The network is shown below.<br><a href="/graph-research-report-md/traff1.png" title="Traffic Image" class="gallery-item" style="box-shadow: none;"> <img src="/graph-research-report-md/traff1.png" alt="Traffic Image"></a><br>The network basically contains several components:</p>
+<ul>
+<li><p>Trip Graph Construction</p>
+<p>  The data contains:</p>
+<ul>
+<li>Segments: $v_1 \dots v_n$ represents the road segments, seen as nodes, linked by intersections.</li>
+<li>OD: &lt;$v_i,v_j, t$&gt; Origin-destination, the data record the number of vehicles travel from $v_i$ to $v_j$ at time interval $t$</li>
+<li>Path &lt;$v_1 \dots v_{|p|},t$&gt; record the number of vehicles travel via certain path at time $t$</li>
+</ul>
+</li>
+<li><p>Path embedding Initialization</p>
+<p>  The intuition is to encode the path by regarding paths as sequences just like natural language and use a bi-direction RNN-like net. </p>
+<p>  One will get the embedding of each segment and thus get the path embedding by concatenation of segment embedding. The results are called $\hat H_i$</p>
+</li>
+<li><p>TAL layer</p>
+<ul>
+<li><p>the Route Learning</p>
+<ul>
+<li><p>Determine the proportion of OD demands assigned to each candidate route under dynamic traffic conditions</p>
+</li>
+<li><p>Specifically, it uses the path data and Graph Attention to learn the importance of a path-node and its neighbors of the same OD. </p>
+</li>
+<li><p>From my comprehension, the network calculate the attention scores as weights and update the path embedding</p>
+</li>
+</ul>
+<p>  (needs more explanation)</p>
+</li>
+<li><p>Segment Message Passing</p>
+<ul>
+<li>Update segment embedding according to the path-node embedding</li>
+</ul>
+<p>  (needs more explanation)</p>
+</li>
+</ul>
+</li>
+<li><p>Temporal Dependencies Modeling</p>
+<ul>
+<li><p>Predict future traffic volumes for each road segment based on observed OD demands and traffic conditions. Use a RNN-like decoder.</p>
+</li>
+<li><p>Feed all the segment embeddings $\hat H_t$ as a whole from the previous $t$ and predict traffic volume</p>
+</li>
+</ul>
+<p>  (needs more explanation)</p>
+</li>
+</ul>
+<h2 id="Database-and-software"><a href="#Database-and-software" class="headerlink" title="Database and software"></a>Database and software</h2><h3 id="neo4j"><a href="#neo4j" class="headerlink" title="neo4j"></a><a target="_blank" rel="noopener" href="https://neo4j.com/?utm_source=Google&utm_medium=PaidSearch&utm_campaign=Evergreenutm_content=AMS-Search-SEMBrand-Evergreen-None-SEM-SEM-NonABM&utm_term=neo4j&utm_adgroup=core-brand&gad_source=1&gclid=CjwKCAiArfauBhApEiwAeoB7qBOTq_aRkd6myqch3mCe3yy-2DNRE6GMID4vYfm4CHOGq9wkhBZsnxoCC6EQAvD_BwE">neo4j</a></h3><ul>
+<li>Graph database and software, used for graph analysis. (needs more exploration)</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/676396667">neo4j知识图谱可视化实操</a></li>
+</ul>
+<h2 id="Graph-Anomaly-Detection"><a href="#Graph-Anomaly-Detection" class="headerlink" title="Graph Anomaly Detection"></a>Graph Anomaly Detection</h2><p>Task discripthion:</p>
+<pre><code>Anomaly detection aims to identify data points or patterns that significantly deviate from the norm within graph-structured data, particularly when the graph nodes are associated with attributes.
+
+In attributed graphs, each node typically has associated attributes (e.g., in a social network, users might have attributes like age, gender, interests), which provide rich information for analysis. Anomaly detection is especially important for such data as it can help identify and prevent various abnormal behaviors, such as fraud, intrusions, disease outbreaks, etc.
+</code></pre>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9556511">Cross-Domain Graph Anomaly Detection</a><br><a href="/graph-research-report-md/COMMANDER.png" title="COMMANDER" class="gallery-item" style="box-shadow: none;"> <img src="/graph-research-report-md/COMMANDER.png" alt="COMMANDER"></a> The network basically contains 4 components<ul>
+<li><p>A graph attentive encoder</p>
+<p>  Based on GATs.</p>
+</li>
+<li><p>A domain discriminator</p>
+<pre><code>  After the feature encoding phase, the domain label of nodes would not be accurately recognized by the domain discriminator, and the shared graph attentive encoder would be able to extract domain-invariant node representations from both source graph $G_s$ and target graph $G_t$
+</code></pre>
+</li>
+<li><p>An anomaly classifier</p>
+</li>
+<li><p>An attribute decoder.</p>
+</li>
+</ul>
+</li>
+</ul>
 </div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
@@ -338,24 +392,9 @@
     <div class="post-meta">
         <i>
         
-            <span>2023-12-25</span>
-            
-                <span>该篇文章被 Zimo</span>
+            <span>2024-03-05</span>
             
             
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/LLM/'>
-                            LLM
-                        </a>
-                    
-                        <a href='/tags/clinic/'>
-                            clinic
-                        </a>
-                    
-                </span>
-             
              
         
         </i>
