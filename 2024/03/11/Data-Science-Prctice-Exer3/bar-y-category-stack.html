@@ -1,0 +1,143 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category-stack&lang=js&code=PYBwLglsB2AEC8sDeAoWszGAG0iAXMmuhgE4QDmFApqYQOQCGAHhAM70A0x6L7ACsAjQwtQqhIkwATxDUGbABaMAJsADu9HrAC-xHd3TZqNaCvHaVjMI0IBtegDEArtADGkGI2yxGbNpTQALbUIlyw9ILYEJBu3rDCbJBgzp7QHJwRAIIqQcLsYKTWEABu1AnpyalQ6eFO7HE-iVVpGRH8jKSxECDFML5mvm5uwK42AEYQ0TL0ALr6hrAU5OZEksYAZmAMAMwApFza5BSK2xEALAeL6OPAYJhBu1faIyKMwgAyjOPU2ISFzmoC2IzCyrDYFkkMjkDBK3kBWnQBmI0jB7EhUlk8gicVEFGApGkh0kVhs9noACFGNAKNhVNQlHUAKJgRRQEAQRh1ADiymgXMy9AAkmZOXURWpoAyxYKANKhaQCiIAWWAAC9GEFJgBHBGCjoAawK1Lq_DZ0RAHKlbXoACV1NSrHUAMqhEzeF3kWBfaAGpX0AAq1I10BlEQAWprJlz5kjFmxaBAGfZtBJJLB-SEGC53Gl4n4AhRgqEwMT09DsfRxp0y5Ikow3AaGJgbNhayQ6T8_mt0-glBp_qRAdo4yPYNQgiBlAEIT3extgG5nLP6AnyAzEenkb3SbZYHZzgA6ACMO0yACZDwB2c6ZHYnq8Xw_nx-wI8ADgAnJlj4eAAxnrA95XuemRHue35voeABsoGwJex5wZen7vmBMG3rAv7Qa-v4gbGJDbiQaaSJmlZRDEECNBUSQxNUMAZGOFYMNWpDtn2NiNs2dwetcHbfL8GK9v26iDsOvaEZIE5Tn46JzumC5Liua5JhwY4SSQu72Pef6Qdpr7Aa-R7QU-f4YZe5zHne6FoQBVkAKyofBz7GUBh7vi5CE_oeOyOchn74aOkjESQpEMDkeShkkRSQGU1EtDUDG9kxEQsWxsD1pxEQtjxY6dgJcl1ooA5kGJW68egUnTrJwWSApy4KImG5qeVsCafu94vlZ56WVBV4uUe5yAfesFPjscH3jsHknv1z6-c-dlWe-PWXtBkHIZkf5uceAW6LxNUZpqlaOA08TNLRrRpclVY1i1GVNll3Fti1eXdvtfZFSJJVAuJLWVTJs5vbAdVKY1qk_WObUHteU3nGZh6fpB4E2Rh2mOfex5rc-cFHgjJkuRNMMo_-SHXjt6n7aF7SdN0vRpAMKhDCMYzfFMMREi1V2pbdHH3fQ2VPbl_GvWO73FQC31lWOf0zoJ8mLvVETKU14M7tYe52Pe5y6SeXkWYtjm_n-C2uZNT5Xq-l7ni5v7Hmjz6Y--JPvnbx49Zt5zvmTxDzDoADcQA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {
+    data: ['Functional assignment', 'Political institutions', 'Administrative institutions', 'Fiscal institutions', 'Participation and accountability']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value'
+  },
+  yAxis: {
+    type: 'category',
+    data: ['Bangladesh', 'Ethiopia', 'Ghana', 'India', 'Indonesia', 'Kenya', 'Mozambique', 'Pakistan', 'Philippines', 'Rwanda', 'Senegal', 'Sri Lanka', 'Tanzania', 'Zambia']
+  },
+  series: [
+    {
+      name: 'Functional assignment',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [4.13, 2.74, 3.17, 2.27, 4.89, 1.03, 3.72, 4.29, 4.62, 2.12, 2.98, 4.64, 1.67, 1.72]
+    },
+    {
+      name: 'Political institutions',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [3.09, 3.07, 3.77, 4.6, 2.04, 2.41, 3.64, 4.03, 3.58, 2.26, 3.86, 2.1, 1.38, 2.99]
+    },
+    {
+      name: 'Administrative institutions',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [3.27, 3.21, 4.76, 4.43, 3.62, 2.32, 3.36, 2.16, 4.28, 2.25, 3.81, 2.69, 2.9, 0.81]
+    },
+    {
+      name: 'Fiscal institutions',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [4.76, 2.44, 2.99, 4.2, 4.04, 3.08, 3.19, 2.22, 4.99, 2.06, 3.36, 2.44, 3.02, 2.7]
+    },
+    {
+      name: 'Participation and accountability',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [3.49, 3.1, 1.41, 3.88, 1.05, 3.36, 2.77, 2.26, 1.18, 3.29, 2.82, 2.88, 3.11, 0.48]
+    }
+  ]
+};
+
+
+
+
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
