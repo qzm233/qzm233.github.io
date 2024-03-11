@@ -1,0 +1,166 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=radar&version=5.5.0&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOQDCwArtGAE4CesAygMbBM4DOlADRF0AI2BgwwALYEADIPQB6JRxxgMACxwYI2HVK07xkmSNi4AZhViVOORjiaVlq6g7BOju_UQC-wui4AOYOACYEqMSwYQCGYLEEANqUAEKx0MFYsWH8mkKUAKJgmlAgELEFAOKaGZWClACS0GEVBc1hMPxtDQDSDiz15tHolACywABesdKiEACOdDgFAAqxANYQfAnQq6VYECDl0PwFAEoA7hlxQsMjlOwOOMGxWAXsTBCwADIZ6_WUAAqGWm0B6lAAWjM5pUALr-QKwJg5WJMSLmFSwPi1ED4WycCBMTi4W7RCAtCCceI8ZJ3JCwaAzPGUABiDE4kBgr1gsT4fAgwWg0g8Qlg0lipAIAFZYAE6QymVQVsADpAqVhYOTtno6JzoAJFOLJbAZXKRsgFcKqABBMLSclbZjxCAANx0Wswuqg-tFRulssR0XpjKtthZW3Vmv1nr1BrFEv9ZpGwcVtjWTDVh2dMB5LR5nG4DASc1VLF9CZNAfM8PQSb4Tgg_FpQbuIeZtCLrFJIzALFxVGRcWcgeIqJwsXYvdw6PN6GgPHFWBns_QoFiBN78gAdAAOEfRPx3JPROIJZuzqIr2Au15LZIAFi3AEYAMyKF9buQATnfW4ATAA7Ioj4AQAbL-95frC-4jG2VDpJk2S5NilB3LWMHoJeK43lgd6wEkf5bgB96_nIQGwB-f5PoohH3iRFHPtBaHEHBtjFKUoBtMxx7Jsx6A4XhSQfk-5EfgB5EgeBsCEV-P6wE-W73k-TFXpazI1HUqErjxLaqQJeIEf-ElblJj73m-sCPn-v47juKlXqxTQUpU3EYYQem3gZj47nJhFyPRH6gdZlmfvRClyFK9kro5HRdPyLnaW5WGzvpyThRZtHUdJW4vsFH5yHuDEvqBUWzo5_TQIMWmzjpxDJeaqX4WJeUmQFOVScJvlEQBpXmo5EzTLMCxLNV5q1ZhfHXp5D7_nJj5yBlz5SYRf7BStJVuXOqaUGsmzbBko0jON7lXo1SSPkFv5SoVVk3VusmKApT52ZtalKvshzHKcrnMfVIxnYRT5rf-y3_lKNGfh1s29bB22XNcCU1Ulk0A_dhUfjuUM7llH7FRDO5_jD0SOY8JwvG8P0rn90RnRd9GAxDoFdXR-MvZNJOfD8fyI2NyMebhBkKaB5EKS-hUyaRLVPspr2OcC0CglxiW_Sj034QpAHAw9sByLuWWEeRuv3mzqmOVCQ080ddw1sQh7oPCfgANwoJigDiCoAfdFYg2_BJHIsJbqesSwIA9GaAKDKgDUKoAv2qAG3agBTyoAboqACAqgCeGYA4MaAOAWgDp-oAYEqACFugAOpoAI34oLgGiFowrAACLxEHiCgHqW71p8Pt-wHNfOy7qiAIXRgDp3jngDcBoAMSqAG56gDftoABUqAAxKReALRyKDl8wLDVwkW6WDwhTrpoAAUC-sAgAB8J27ywW5SAkWBcDwOiIMfW76VuvBhHQ9hb1v66cIoOEAJQH_mnCwAAaimlgRQcgv7Oz8OAlAndYCAEhjQA5o4D0HoAbfjAAyEYAWTTADxeoAJONMHz3oBXJeNdG48DAK_WIihRA_3gIfWIp8JCvEvrwAAtKIeh58mE6CgTAwAyfGAC_FXBgA4FVzjHfOgA7Y3wfqFUOAtxYGAMEHeBDF7L1iNwzEgAXs0AA2mFhnjhFgDPER0dABeGXg-u3pZG6JaG3BICBYDHxUVucUIBFGdjYDQuxSjWBbjbGo1QWikQoiYPoguEizEwEbt7Pgvt_aB1sfY9u0DMSAFnEzRgAmO0AMvmgA_tUABYRMDADv0YATgsxGAAN5QA_vKAApXXOgB75UAGORgA0ZUAMl6udADuioAZXlACdpoAVZs0E5NzlooAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: 'Country Scores',
+    bottom: 0,  // Set the title to the bottom
+    left: 'center'  // Center the title
+  },
+  legend: {
+    data: ['Bangladesh','Ethiopia','Ghana','India','Indonesia','Kenya',
+          'Mozambique','Pakistan','Philippines','Rwanda',
+          'Senegal','Sri Lanka','Tanzania','Zambia']
+  },
+  radar: {
+    // shape: 'circle',
+    indicator: [
+      { name: 'Functional assignment', max: 5 },
+      { name: 'Political institutions', max: 5 },
+      { name: 'Administrative institutions', max: 5 },
+      { name: 'Fiscal institutions', max: 5 },
+      { name: 'Participation and accountability', max: 5 },
+    ]
+  },
+  series: [
+    {
+      name: 'Country',
+      type: 'radar',
+      areaStyle: {
+        normal: {
+          opacity: 0.8,
+        }
+      },
+      data: [
+        {
+          value: [4.13, 3.09, 3.27, 4.76, 3.49],
+          name: 'Bangladesh'
+        },
+        {
+          value: [2.74, 3.07, 3.21, 2.44, 3.1],
+          name: 'Ethiopia'
+        },
+        {
+          value: [3.17, 3.77, 4.76, 2.99, 1.41],
+          name: 'Ghana'
+        },
+        {
+          value: [2.27, 4.6, 4.43, 4.2, 3.88],
+          name: 'India'
+        },
+        {
+          value: [4.89, 2.04, 3.62, 4.04, 1.05],
+          name: 'Indonesia'
+        },
+        {
+          value: [1.03, 2.41, 2.32, 3.08, 3.36],
+          name: 'Kenya'
+        },
+        {
+          value: [3.72, 3.64, 3.36, 3.19, 2.77],
+          name: 'Mozambique'
+        },
+        {
+          value: [4.29, 4.03, 2.16, 2.22, 2.26],
+          name: 'Pakistan'
+        },
+        {
+          value: [4.62, 3.58, 4.28, 4.99, 1.18],
+          name: 'Philippines'
+        },
+        {
+          value: [2.12, 2.26, 2.25, 2.06, 3.29],
+          name: 'Rwanda'
+        },
+        {
+          value: [2.98, 3.86, 3.81, 3.36, 2.82],
+          name: 'Senegal'
+        },
+        {
+          value: [4.64, 2.1, 2.69, 2.44, 2.88],
+          name: 'Sri Lanka'
+        },
+        {
+          value: [1.67, 1.38, 2.9, 3.02, 3.11],
+          name: 'Tanzania'
+        },
+        {
+          value: [1.72, 2.99, 0.81, 2.7, 0.48],
+          name: 'Zambia'
+        }
+      ]
+    }
+  ]
+};
+// 假设 series[0].data 是包含国家及其各项指标得分的数组
+let countryData = option.series[0].data;
+
+// 计算得分总和并添加到数组中
+countryData.forEach(country => {
+  country.totalScore = country.value.reduce((acc, val) => acc + val, 0);
+});
+
+// 按照得分总和进行降序排序
+countryData.sort((a, b) => a.totalScore-b.totalScore );
+
+// 输出排序后的国家数据
+console.log(countryData);
+
+// 更新 legend 中的国家顺序
+option.legend.data = countryData.map(country => country.name);
+
+// 更新 radar 中的数据
+option.series[0].data = countryData;
+
+// 重新渲染图表
+// 请根据你使用的可视化库的具体方法进行图表的更新
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
